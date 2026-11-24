@@ -1,4 +1,4 @@
-module github.com/smhanov/auth
+module github.com/nsd97/auth
 
 go 1.26.0
 

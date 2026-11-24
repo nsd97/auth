@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 func TestCORSAllowsConfiguredOrigin(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 // Example_apple shows Sign in with Apple using env credentials.

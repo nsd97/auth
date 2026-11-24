@@ -9,7 +9,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 // Create our own database, and

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 // googleClientID is the Google client ID configured on the handlers used

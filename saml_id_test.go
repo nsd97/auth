@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 // TestGetSamlIDValidMetadata verifies that GetSamlID extracts the

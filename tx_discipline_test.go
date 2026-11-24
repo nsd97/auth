@@ -15,7 +15,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/smhanov/auth"
+	"github.com/nsd97/auth"
 )
 
 // makePostRequest sends the parameters as a POST form body, presenting the

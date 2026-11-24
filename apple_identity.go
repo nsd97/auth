@@ -33,8 +33,12 @@ type appleJWK struct {
 
 type appleIDTokenClaims struct {
 	Email string `json:"email"`
-	// Apple emits email_verified as a JSON string ("true"/"false").
-	EmailVerified string `json:"email_verified"`
+	// Apple documents email_verified as either a JSON string ("true"/"false")
+	// or a JSON boolean (true/false), and sends the boolean form over the
+	// web / Services-ID flow. Decode into any so neither form makes the token
+	// fail to parse; normalize to a bool in verifyAppleIdentityToken.
+	// https://developer.apple.com/documentation/signinwithapplejs/authorizationi/id_token
+	EmailVerified any `json:"email_verified"`
 	jwt.StandardClaims
 }
 
@@ -76,7 +80,7 @@ func verifyAppleIdentityToken(idToken string, audiences []string) (string, strin
 	if claims.Subject == "" {
 		HTTPPanic(http.StatusBadRequest, "invalid apple identity token")
 	}
-	verified := claims.EmailVerified == "true"
+	verified := claims.EmailVerified == true || claims.EmailVerified == "true"
 	email := claims.Email
 	if email == "" {
 		email = fmt.Sprintf("%s@apple.example.com", claims.Subject)
